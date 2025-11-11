@@ -86,5 +86,5 @@ jobs:
           cat helm/values.yml
       - name: Deploy files
         run: |
-          helm show chart oci://registry-1.docker.io/${{ secrets.DOCKER_USERNAME  }}/${{ inputs.helm_name }} --version ${{ inputs.helm_name }}
-          helm upgrade --install ${{ inputs.helm_release }} oci://registry-1.docker.io/${{ secrets.DOCKER_USERNAME  }}/${{ inputs.helm_name }} --version 8 --values helm/values.yml
+          helm show chart oci://registry-1.docker.io/${{ secrets.DOCKER_USERNAME  }}/${{ inputs.helm_name }} --version ${{ inputs.helm_version }}
+          helm upgrade --install ${{ inputs.helm_release }} oci://registry-1.docker.io/${{ secrets.DOCKER_USERNAME  }}/${{ inputs.helm_name }} --version ${{ inputs.helm_version }} --values helm/values.yml
