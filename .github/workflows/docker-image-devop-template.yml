@@ -82,7 +82,7 @@ jobs:
           echo "Reemplazando {{ tag }} con ${{ inputs.image_tag }}"
           sed -i "s|{{ tag }}|${{ inputs.image_tag }}|g"  helm/values.yml
           echo "Reemplazando {{ repository }} con ${{ inputs.image_repository }}"
-          sed -i "s|{{ repository }}|${{ inputs.image_repository }}|g"  helm/values.yml
+          sed -i "s|{{ repository }}|${{ secrets.DOCKER_USERNAME }}/${{ inputs.image_repository }}|g"  helm/values.yml
           cat helm/values.yml
       - name: Deploy files
         run: |
