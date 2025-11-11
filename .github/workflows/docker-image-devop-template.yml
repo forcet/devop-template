@@ -17,11 +17,11 @@ on:
         type: string
       image_repository:
         description: 'Repositorio de la imagen'
-        required: true
+        required: false
         type: string
       image_tag:
         description: 'Tag de la imagen'
-        required: true
+        required: false
         type: string
       namespace:
         description: 'Nombre del entorno de trabajo de openshift'
